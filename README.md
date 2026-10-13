@@ -45,7 +45,15 @@ This repository provides an end-to-end curriculum and computational pipeline for
 2. Open the sidebar chat and prompt Antigravity:
    ```text
    /plan
-   Please take the Influenza H1N1 HA dataset at data/h1n1/h1n1_ha_unaligned.fasta and metadata at data/h1n1/h1n1_ha_metadata.tsv, align it with MAFFT, construct a Maximum Likelihood tree with IQ-TREE, and generate an interactive HTML tree report.
+   You are an expert bioinformatician. We want to conduct an end-to-end phylogenetic analysis for Influenza A (H1N1pdm09) starting from public databases to an annotated tree:
+
+   1. Search and retrieve the official reference and vaccine strain sequences (CY121680.1 for A/California/07/2009 root, OQ719015.1 for A/Victoria/2570/2019, and OQ718989.1 for A/Victoria/4897/2022) from the NCBI public database.
+   2. Integrate these NCBI references with the clinical dataset at data/h1n1/h1n1_ha_unaligned.fasta and metadata at data/h1n1/h1n1_ha_metadata.tsv.
+   3. Perform sequence QC, align with MAFFT, and calculate alignment metrics.
+   4. Construct a Maximum Likelihood phylogenetic tree with IQ-TREE (GTR+G, 1000 ultrafast bootstraps).
+   5. Root the tree on the NCBI 2009 reference root and generate an interactive HTML tree report.
+
+   Please present your execution plan first, and proceed step by step.
    ```
 3. Follow the full prompt recipes in **[PROMPT_BOOK.md](PROMPT_BOOK.md)**.
 

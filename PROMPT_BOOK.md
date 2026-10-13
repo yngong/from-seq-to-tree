@@ -167,15 +167,20 @@ For advanced students who want Antigravity to perform the entire pipeline autono
 /plan
 You are an expert bioinformatician and evolutionary virologist.
 
-Your task is to take the unaligned Influenza A (H1N1pdm09) Hemagglutinin dataset at data/h1n1/h1n1_ha_unaligned.fasta and perform an end-to-end phylogenetic analysis:
-1. Conduct sequence QC and sanity checking.
-2. Run multiple sequence alignment using MAFFT and calculate alignment metrics.
-3. Construct a maximum likelihood phylogenetic tree with IQ-TREE (GTR+G, 1000 ultrafast bootstraps).
-4. Re-root the tree on A/California/07/2009.
-5. Generate an interactive HTML tree visualization linking metadata from data/h1n1/h1n1_ha_metadata.tsv.
-6. Produce a comprehensive markdown summary report analyzing the tree topology, bootstrap support values, and the evolutionary relationship between recent clinical isolates and WHO vaccine reference strains.
+We want to conduct an autonomous, end-to-end phylogenetic analysis for Influenza A (H1N1pdm09) from public databases to an annotated evolutionary tree:
+1. Search and retrieve the official reference sequences from the NCBI public database (GenBank / NCBI Nucleotide):
+   - Pandemic Root: CY121680.1 (A/California/07/2009)
+   - 2019 Vaccine Reference: OQ719015.1 (A/Victoria/2570/2019)
+   - 2022 Vaccine Reference: OQ718989.1 (A/Victoria/4897/2022)
+2. Integrate these NCBI references with the local clinical isolate dataset at data/h1n1/h1n1_ha_unaligned.fasta and metadata at data/h1n1/h1n1_ha_metadata.tsv.
+3. Conduct sequence QC, verify lengths, and align using MAFFT (--auto).
+4. Inspect the alignment for constant and parsimony-informative sites using scripts/compare_alignment_qc.py.
+5. Construct a Maximum Likelihood phylogenetic tree with IQ-TREE (GTR+G, 1000 ultrafast bootstraps).
+6. Re-root the tree on the NCBI 2009 pandemic reference strain (A/California/07/2009).
+7. Generate an interactive HTML tree visualization with metadata linking via scripts/render_tree_interactive.py.
+8. Produce a concise markdown summary report analyzing the tree topology, bootstrap support, and the evolutionary drift between recent clinical isolates and WHO vaccine strains.
 
-Please present your execution plan first, and execute step by step.
+Please present your execution plan first, and proceed step by step.
 ```
 
 ---
