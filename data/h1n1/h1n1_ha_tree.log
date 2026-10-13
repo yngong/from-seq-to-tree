@@ -1,0 +1,151 @@
+IQ-TREE version 3.1.2 for Linux x86 64-bit built May 17 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    yngong-Pro-E500-G6-WS720T (AVX2, FMA3, 125 GB RAM)
+Command: iqtree -s data/h1n1/h1n1_ha_aligned.fasta -m GTR+G -B 1000 -T 4 --redo -pre data/h1n1/h1n1_ha_tree
+Seed:    637357 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Oct 13 15:02:38 2026
+Kernel:  AVX+FMA - 4 threads (20 CPU cores detected)
+
+Reading alignment file data/h1n1/h1n1_ha_aligned.fasta ... Fasta format detected
+Reading fasta file: done in 0.000841856 secs using 78.99% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00113416 secs using 400.2% CPU
+Alignment has 30 sequences with 1767 columns, 204 distinct patterns
+86 parsimony-informative, 120 singleton sites, 1561 constant sites
+                                                Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 1.21593e-05 secs using 90.47% CPU
+   1  A/California/07/2009_REF_NextstrainRoot          63.27%    passed     55.94%
+   2  A/Victoria/2570/2019_Vaccine_Ref                  1.25%    passed     99.03%
+   3  A/Victoria/4897/2022_Vaccine_Ref                  3.74%    passed     96.98%
+   4  A/Texas/3/2020_NextstrainCladeRef                 0.91%    passed     95.00%
+   5  A/RhodeIsland/11/2020_NextstrainCladeRef          0.85%    passed     98.06%
+   6  A/Wisconsin/184/2020_NextstrainCladeRef           0.85%    passed     99.62%
+   7  A/Pennsylvania/138/2020_NextstrainCladeRef        0.85%    passed     99.58%
+   8  A/Wisconsin/14/2021_NextstrainCladeRef            0.85%    passed     98.45%
+   9  A/NorthCarolina/2/2021_NextstrainCladeRef         0.91%    passed     98.74%
+  10  A/Connecticut/1/2021_NextstrainCladeRef           0.79%    passed     99.12%
+  11  A/SouthCarolina/16/2022_NextstrainCladeRef        0.85%    passed     98.95%
+  12  A/SouthDakota/34/2022_NextstrainCladeRef          0.85%    passed     99.64%
+  13  A/SouthDakota/59/2022_NextstrainCladeRef          0.85%    passed     98.00%
+  14  A/Colorado/65/2022_NextstrainCladeRef             0.85%    passed     99.79%
+  15  A/Idaho/81/2022_NextstrainCladeRef                0.85%    passed     99.76%
+  16  A/DistrictOfColumbia/8/2023_NextstrainCladeRef    0.85%    passed     99.87%
+  17  A/Ohio/5/2023_NextstrainCladeRef                  0.85%    passed     99.79%
+  18  A/Nebraska/3/2023_NextstrainCladeRef              0.85%    passed     98.33%
+  19  A/Idaho/14/2023_NextstrainCladeRef                0.85%    passed     99.86%
+  20  A/Colorado/16/2023_NextstrainCladeRef             0.85%    passed     99.94%
+  21  A/California/44/2023_NextstrainCladeRef           0.79%    passed     99.42%
+  22  A/Taiwan/V3020214026/2023_barcode09               1.36%    passed     98.59%
+  23  A/Taiwan/V3030714038/2023_barcode11               1.25%    passed     98.72%
+  24  A/Taiwan/V3040798065/2023_barcode12               1.36%    passed     99.09%
+  25  A/Taiwan/V011534116/2024_barcode14                1.25%    passed     98.83%
+  26  A/Taiwan/V011998065/2024_barcode15                1.25%    passed     97.21%
+  27  A/Taiwan/V012498036/2024_barcode16                1.30%    passed     97.01%
+  28  A/Taiwan/V010114010/2025_barcode17                1.75%    passed     97.84%
+  29  A/Taiwan/V010296019/2025_barcode18                3.00%    passed     98.53%
+  30  A/Taiwan/V011214009/2025_barcode20               37.18%    passed     80.51%
+WARNING: 1 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                             4.44%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 3.98159e-05 secs using 374.2% CPU
+Creating fast initial parsimony tree by random order stepwise addition...
+0.010 seconds, parsimony score: 247 (based on 206 sites)
+Generating 1000 samples for ultrafast bootstrap (seed: 637357)...
+
+NOTE: 1 MB RAM (0 GB) is required!
+WARNING: Number of threads seems too high for short alignments. Use -T AUTO to determine best number of threads.
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -4191.955
+2. Current log-likelihood: -4061.199
+3. Current log-likelihood: -4061.045
+Optimal log-likelihood: -4061.043
+Rate parameters:  A-C: 1.28822  A-G: 6.13587  A-T: 0.61064  C-G: 0.37950  C-T: 6.95959  G-T: 1.00000
+Base frequencies:  A: 0.355  C: 0.189  G: 0.220  T: 0.236
+Gamma shape alpha: 0.274
+Parameters optimization took 3 rounds (0.020 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.000718832 secs using 401.5% CPU
+Computing ML distances took 0.000805 sec (of wall-clock time) 0.003173 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 2.38419e-05 secs using 796.9% CPU
+Constructing RapidNJ tree: done in 0.00047183 secs using 150.3% CPU
+Computing RapidNJ tree took 0.000673 sec (of wall-clock time) 0.002952 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -4119.012
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.024 second
+Computing log-likelihood of 98 initial trees ... 0.070 seconds
+Current best score: -4057.884
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -4057.471
+BETTER TREE FOUND at iteration 2: -4057.470
+BETTER TREE FOUND at iteration 9: -4057.469
+Iteration 10 / LogL: -4057.470 / Time: 0h:0m:0s
+Iteration 20 / LogL: -4057.471 / Time: 0h:0m:0s
+Finish initializing candidate tree set (13)
+Current best tree score: -4057.469 / CPU time: 0.429
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -4057.471 / Time: 0h:0m:0s (0h:0m:1s left)
+UPDATE BEST LOG-LIKELIHOOD: -4057.469
+Iteration 40 / LogL: -4057.546 / Time: 0h:0m:0s (0h:0m:1s left)
+Iteration 50 / LogL: -4057.476 / Time: 0h:0m:1s (0h:0m:1s left)
+Log-likelihood cutoff on original alignment: -4091.512
+Iteration 60 / LogL: -4057.476 / Time: 0h:0m:1s (0h:0m:1s left)
+UPDATE BEST LOG-LIKELIHOOD: -4057.469
+Iteration 70 / LogL: -4057.472 / Time: 0h:0m:1s (0h:0m:0s left)
+Iteration 80 / LogL: -4057.471 / Time: 0h:0m:1s (0h:0m:0s left)
+Iteration 90 / LogL: -4057.474 / Time: 0h:0m:2s (0h:0m:0s left)
+Iteration 100 / LogL: -4057.540 / Time: 0h:0m:2s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -4091.226
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.995
+Iteration 110 / LogL: -4057.485 / Time: 0h:0m:2s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 110 ITERATIONS / Time: 0h:0m:2s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -4057.469
+Optimal log-likelihood: -4057.469
+Rate parameters:  A-C: 1.27966  A-G: 6.18071  A-T: 0.55748  C-G: 0.36017  C-T: 6.93122  G-T: 1.00000
+Base frequencies:  A: 0.355  C: 0.189  G: 0.220  T: 0.236
+Gamma shape alpha: 0.273
+Parameters optimization took 1 rounds (0.002 sec)
+BEST SCORE FOUND : -4057.469
+Creating bootstrap support values...
+Split supports printed to NEXUS file data/h1n1/h1n1_ha_tree.splits.nex
+Total tree length: 0.172
+
+Total number of iterations: 110
+CPU time used for tree search: 9.789 sec (0h:0m:9s)
+Wall-clock time used for tree search: 2.407 sec (0h:0m:2s)
+Total CPU time used: 10.197 sec (0h:0m:10s)
+Total wall-clock time used: 2.516 sec (0h:0m:2s)
+
+Computing bootstrap consensus tree...
+Reading input file data/h1n1/h1n1_ha_tree.splits.nex...
+30 taxa and 220 splits.
+Consensus tree written to data/h1n1/h1n1_ha_tree.contree
+Reading input trees file data/h1n1/h1n1_ha_tree.contree
+Log-likelihood of consensus tree: -4057.488
+
+Analysis results written to: 
+  IQ-TREE report:                data/h1n1/h1n1_ha_tree.iqtree
+  Maximum-likelihood tree:       data/h1n1/h1n1_ha_tree.treefile
+  Likelihood distances:          data/h1n1/h1n1_ha_tree.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          data/h1n1/h1n1_ha_tree.splits.nex
+  Consensus tree:                data/h1n1/h1n1_ha_tree.contree
+  Screen log file:               data/h1n1/h1n1_ha_tree.log
+
+Date and Time: Tue Oct 13 15:02:41 2026
