@@ -29,16 +29,39 @@ In `data/h1n1/`, we have curated a representative 30-strain dataset spanning 16 
 
 ---
 
-## 3. The 5-Step Workflow: Step-by-Step with Antigravity
+## 3. The 6-Step Workflow: Step-by-Step with Antigravity
 
 ```mermaid
 flowchart LR
-    A["Raw FASTA (30 Taxa)"] --> B["Step 1: QC & Sanitization"]
+    A0["NCBI Public Database (GenBank / NCBI Virus)"] --> A["Raw FASTA"]
+    A --> B["Step 1: QC & Sanitization"]
     B --> C["Step 2: Multiple Alignment (MAFFT)"]
     C --> D["Step 3: ML Tree (IQ-TREE + UFBoot)"]
     D --> E["Step 4: Outgroup Rooting (CA/07/2009)"]
     E --> F["Step 5: Interactive HTML Tree Viewer"]
 ```
+
+### Step 0: Searching and Downloading Sequences from the NCBI Public Database
+
+Before building a phylogenetic tree, students must acquire authoritative reference sequences and surveillance isolates from the **NCBI Public Databases**.
+
+#### 🌐 Where and How to Search on NCBI:
+1. **NCBI Virus Portal**: [https://www.ncbi.nlm.nih.gov/labs/virus/](https://www.ncbi.nlm.nih.gov/labs/virus/)
+   - **Virus**: Select `Influenza A virus` (`taxid:11320`).
+   - **Serotype**: Select `H1N1`.
+   - **Segment / Protein**: Filter by `Segment 4` or `Hemagglutinin (HA)`.
+   - **Host**: Filter by `Homo sapiens (human)`.
+   - **Completeness**: Filter for complete coding sequences (~1,700 bp).
+2. **NCBI Nucleotide / GenBank**: [https://www.ncbi.nlm.nih.gov/nucleotide/](https://www.ncbi.nlm.nih.gov/nucleotide/)
+   - Query by exact Accession numbers for international reference and WHO vaccine strains:
+     - `CY121680.1`: **A/California/07/2009** (Root reference strain for H1N1pdm09).
+     - `OQ719015.1`: **A/Victoria/2570/2019** (WHO 2019–2021 vaccine strain, Clade 5a.2).
+     - `OQ718989.1`: **A/Victoria/4897/2022** (WHO 2022–2025 updated vaccine strain, Subclade 5a.2a).
+
+#### 💡 Student Prompt to Antigravity:
+> *"Antigravity, please query the NCBI public database (GenBank / NCBI Nucleotide) and download the reference sequences for A/California/07/2009 (CY121680.1), A/Victoria/2570/2019 (OQ719015.1), and A/Victoria/4897/2022 (OQ718989.1) into `data/h1n1/ncbi_fetched_references.fasta` using `scripts/fetch_ncbi_sequences.py` or BioPython Entrez."*
+
+---
 
 ### Step 1: Sequence QC & Ambiguity Inspection
 

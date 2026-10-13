@@ -51,7 +51,15 @@ This repository provides an end-to-end curriculum and computational pipeline for
 
 ### Option B: Automated CLI Pipeline
 
-Run the end-to-end Python pipeline:
+**Step 0: Retrieve Reference Sequences from NCBI Public Database**
+```bash
+# Query NCBI Nucleotide for H1N1 reference and vaccine strains
+python3 scripts/fetch_ncbi_sequences.py \
+    -a CY121680.1 OQ719015.1 OQ718989.1 \
+    -o data/h1n1/ncbi_fetched_references.fasta
+```
+
+**Step 1: Run the End-to-End Pipeline**
 ```bash
 python3 scripts/run_pipeline.py \
     --input data/h1n1/h1n1_ha_unaligned.fasta \
@@ -95,6 +103,7 @@ from-seq-to-tree/
 │       ├── h1n1_ha_metadata.tsv              # Epidemiological and clade metadata
 │       └── h1n1_ha_tree.treefile             # Maximum Likelihood tree (IQ-TREE)
 ├── scripts/
+│   ├── fetch_ncbi_sequences.py               # NCBI public database sequence downloader
 │   ├── run_pipeline.py                       # Automated end-to-end execution script
 │   ├── compare_alignment_qc.py               # Alignment metrics & QC calculator
 │   └── render_tree_interactive.py            # Standalone interactive HTML tree builder
@@ -120,6 +129,9 @@ iqtree -s aligned.fsa -B 1000 -alrt 1000 -redo
 # 4. Restore original names
 python -m vida.restore_fasta_header -i aligned.fsa.contree -o aligned_restored.fsa.contree -m renamed_modified.map
 ```
+
+> 🌐 **Searching the NCBI Public Database**:
+> Go directly to the **[NCBI Nucleotide database](https://www.ncbi.nlm.nih.gov/nucleotide/)** or **[NCBI Virus portal](https://www.ncbi.nlm.nih.gov/labs/virus/)** to search for reference genomes and target genes (e.g., searching by organism `Influenza A virus`, host `Homo sapiens`, and segment `HA`). Use these accession numbers to retrieve reference coordinates or root outgroups.
 
 ---
 

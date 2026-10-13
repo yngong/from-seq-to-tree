@@ -25,6 +25,36 @@ Google Antigravity is an **AI-first agentic paired programming environment**. Un
 
 ## 2. Step-by-Step Prompt Recipes (Stage-by-Stage)
 
+### Stage 0: Finding and Downloading Sequences from the NCBI Public Database
+
+#### 🌐 Where to Search in NCBI:
+Students must explicitly retrieve reference and surveillance sequences from public NCBI databases:
+1. **NCBI Virus Portal**: [https://www.ncbi.nlm.nih.gov/labs/virus/](https://www.ncbi.nlm.nih.gov/labs/virus/)
+   - Virus: *Influenza A virus (taxid:11320)*
+   - Serotype: *H1N1*
+   - Segment: *Segment 4 (Hemagglutinin / HA)*
+   - Host: *Homo sapiens (human)*
+   - Nucleotide Completeness: *Complete CDS (approx. 1,700 bp)*
+2. **NCBI Nucleotide / GenBank**: [https://www.ncbi.nlm.nih.gov/nucleotide/](https://www.ncbi.nlm.nih.gov/nucleotide/)
+   - **Pandemic 2009 Root Reference**: Accession `CY121680.1` (`A/California/07/2009`)
+   - **WHO 2019–2021 Vaccine Reference**: Accession `OQ719015.1` (`A/Victoria/2570/2019`)
+   - **WHO 2022–2025 Vaccine Reference**: Accession `OQ718989.1` (`A/Victoria/4897/2022`)
+
+#### 💬 Copy-Paste Prompt for Antigravity:
+```text
+I need to retrieve reference sequences for Influenza A (H1N1pdm09) from the NCBI public database (GenBank / NCBI Nucleotide).
+
+Please do the following:
+1. Search and download the following official reference sequences from NCBI via BioPython Entrez or using scripts/fetch_ncbi_sequences.py:
+   - Root Reference: CY121680.1 (A/California/07/2009)
+   - 2019 Vaccine Reference: OQ719015.1 (A/Victoria/2570/2019)
+   - 2022 Vaccine Reference: OQ718989.1 (A/Victoria/4897/2022)
+2. Save the downloaded sequences to data/h1n1/ncbi_fetched_references.fasta.
+3. Verify that the downloaded records contain complete Hemagglutinin (HA) coding sequences (~1,700 bp).
+```
+
+---
+
 ### Stage 1: Dataset Quality Check & Inspection
 
 #### 🎯 Goal:
